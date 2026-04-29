@@ -45,7 +45,11 @@ sys.argv = ['']
 # -- find carla module ---------------------------------------------------------
 # ==============================================================================
 
-
+import pygame
+import numpy as np
+import cv2
+from ultralytics import YOLO
+from pathlib import Path
 import glob
 import os
 import sys
@@ -330,7 +334,7 @@ class HUD(object):
         font = pygame.font.Font(pygame.font.get_default_font(), 20)
         fonts = [x for x in pygame.font.get_fonts() if 'mono' in x]
         default_font = 'ubuntumono'
-        mono = default_font if default_font in fonts else fonts[0]
+        mono = pygame.font.get_default_font()
         mono = pygame.font.match_font(mono)
         self._font_mono = pygame.font.Font(mono, 14)
         self._notifications = FadingText(font, (width, 40), (0, height - 40))
@@ -713,6 +717,9 @@ class CameraManager(object):
 
 
 def game_loop(args):
+    base_path = Path(__file__).resolve().parent
+    model_path = base_path.parent /"model"/"yolov8n.pt"
+    model = YOLO(str(model_path))
     pygame.init()
     pygame.font.init()
     world = None
@@ -736,6 +743,22 @@ def game_loop(args):
                 return
             world.tick(clock)
             world.render(display)
+
+            frame = np.array(pygame.surfarray.pixels3d(display))
+
+            frame = frame.transpose((1, 0, 2))
+            frame = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
+
+            results = model(frame)
+            annotated_frame = results[0].plot()
+
+            cv2.imshow("YOLO Detection(without thread)", annotated_frame)
+
+            if cv2.waitKey(1) & 0xFF == ord('q'):
+                break
+
+
+
             pygame.display.flip()
 
     finally:
@@ -744,6 +767,7 @@ def game_loop(args):
             world.destroy()
 
         pygame.quit()
+        cv2.destroyAllWindows()
 
 
 # ==============================================================================

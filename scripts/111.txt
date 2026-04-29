@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "c:/Users/Student/Desktop/GE_Practical/GE-practical-SS26-IT-Group4ZO/scripts/manual_control.py", line 832, in <module>
+    main()
+  File "c:/Users/Student/Desktop/GE_Practical/GE-practical-SS26-IT-Group4ZO/scripts/manual_control.py", line 824, in main
+    game_loop(args)
+  File "c:/Users/Student/Desktop/GE_Practical/GE-practical-SS26-IT-Group4ZO/scripts/manual_control.py", line 735, in game_loop
+    hud = HUD(args.width, args.height)
+  File "c:/Users/Student/Desktop/GE_Practical/GE-practical-SS26-IT-Group4ZO/scripts/manual_control.py", line 337, in __init__
+    mono = default_font if default_font in fonts else fonts[0]
+IndexError: list index out of range
