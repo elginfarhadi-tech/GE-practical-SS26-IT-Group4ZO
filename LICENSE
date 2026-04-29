@@ -1,0 +1,51 @@
+Custom License for General Engineering (PRACTICE) Module No. 15029
+
+Copyright (c) 2025 Jonas Benedikt Schweizer and Sebastian Stabenau
+
+This license governs the use of all contents in this repository, including source code, images, videos, and other media files.
+
+---
+
+**1. General Use**
+
+The use of all contents is strictly limited to the context of a practical course within the General Engineering degree program at the 
+Technische Hochschule Ostwestfalen-Lippe: University of Applied Sciences and Arts
+
+---
+
+**2. Source Code**
+
+- The included source code may be shared and published, **provided it is not used for commercial purposes**.
+- Commercial use is **strictly prohibited**, even in parts or in modified form.
+- Editing and reuse of the code for non-commercial purposes is permitted.
+
+---
+
+**3. Media Content**
+
+- The media content included in this repository **may not be published, distributed, shared, or used commercially**—neither in original nor modified form.
+- Usage is strictly limited to internal use within the context of the practical course.
+- Any publication, for example via social media, websites, or in presentations outside the course context, is **explicitly prohibited**.
+
+---
+
+**4. Additional Notes**
+
+Any use beyond the scope described above requires the explicit written permission of the copyright holders.
+
+All rights reserved.
+
+---
+
+**5. Third-Party Code**
+
+This repository includes components from the open-source project [CARLA Simulator](https://github.com/carla-simulator/carla), in particular the example script `manual_control.py`.
+
+The script `manual_control.py` is licensed under the MIT License and was originally developed by the  
+**Computer Vision Center (CVC) at the Universitat Autònoma de Barcelona**.
+
+**Copyright:**  
+Copyright (c) Computer Vision Center (CVC)  
+**License:** MIT – [https://opensource.org/licenses/MIT](https://opensource.org/licenses/MIT)
+
+The rights to this part of the code remain with the original author. Use, modification, and redistribution of this script are permitted under the terms of the MIT License.
